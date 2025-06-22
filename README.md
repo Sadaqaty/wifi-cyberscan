@@ -54,7 +54,7 @@ A stunning, real-time Python GUI for Wi-Fi probe/AP analytics, built for hackers
 
 1. **Clone the repo:**
 ```sh
-git clone https://github.com/yourusername/wifi-cyberscan.git
+git clone https://github.com/sadaqaty/wifi-cyberscan.git
 cd wifi-cyberscan
 ```
 2. **Install dependencies:**
