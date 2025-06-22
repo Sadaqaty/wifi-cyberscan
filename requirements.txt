@@ -1,0 +1,12 @@
+pandas
+mac_vendor_lookup
+customtkinter
+matplotlib
+plotly
+Pillow
+watchdog
+sounddevice
+numpy
+geopy
+folium
+geocoder 
