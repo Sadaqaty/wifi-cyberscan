@@ -2,6 +2,8 @@
 
 A stunning, real-time Python GUI for Wi-Fi probe/AP analytics, built for hackers, researchers, and enthusiasts. Visualize nearby wireless devices, access points, and probe requests with a cyberpunk dashboard, live radar, and animated analytics.
 
+![Cyber-Scan](/assets/Image.jpeg)
+
 ---
 
 ## Features
@@ -21,12 +23,6 @@ A stunning, real-time Python GUI for Wi-Fi probe/AP analytics, built for hackers
 - **Robust Backend:**
   - Live parsing of airodump-ng CSV logs
   - Handles missing data, errors, and tool checks
-
----
-
-## Screenshots
-
-![Cyber-Scan](/assets/Image.jpeg)
 
 ---
 
