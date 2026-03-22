@@ -1,103 +1,81 @@
-# WiFi CyberScan
+# WiFi CyberScan (Next-Gen)
 
-A stunning, real-time Python GUI for Wi-Fi probe/AP analytics, built for hackers, researchers, and enthusiasts. Visualize nearby wireless devices, access points, and probe requests with a cyberpunk dashboard, live radar, and animated analytics.
+A stunning, real-time Python GUI for Wi-Fi analytics and environment mapping. Highly modular, tactical, and built for advanced signal research. Visualize nearby wireless devices, access points, and physical obstructions with a high-fidelity cyberpunk dashboard.
 
-![Cyber-Scan](/assets/Image.jpeg)
-
----
-
-## Features
-
-- **Real-Time Device Table:**
-  - MAC, Vendor, Power, SSIDs, Last Seen
-- **Animated Movement Graph:**
-  - Signal strength (PWR) over time for each device
-- **Live Geo Mapping:**
-  - Radar-style map with neon dots and animated sweep
-  - Click any dot for full device details (BSSID, ESSID, channel, etc.)
-- **Auto Alerts:**
-  - Watchlist support (highlighted in table)
-- **Beautiful UI:**
-  - Cyberpunk dark theme, neon accents, glassmorphism
-  - Responsive, professional layout
-- **Robust Backend:**
-  - Live parsing of airodump-ng CSV logs
-  - Handles missing data, errors, and tool checks
+![Cyber-Scan](/assets/image-v2.0.png)
 
 ---
 
-## Requirements
+## 🚀 "Next-Level" Features
+
+### 📡 Advanced Signal Sensing
+
+- **Wall Geometry Synthesis**: Automatically calculates and draws oriented wall segments (red) based on path attenuation clusters.
+- **Spectral Material Analysis**: Differentiates between **Metal**, **Concrete Wall**, **Human Presence**, and **Wood** using signal jitter and spectral signature analysis.
+- **Multi-Band Client Detection**: Scans across **2.4GHz and 5GHz** (`--band abg`) to capture modern iPhones, Androids, and laptops.
+- **Unassociated Tracking**: Intercepts probe requests from devices searching for WiFi, even if they aren't connected.
+
+### 🗺️ Interactive Tactical Maps
+
+- **2D Floorplan (Pan & Zoom)**: Google Maps-style navigation. Click and drag to pan, scroll to zoom into specific signal zones.
+- **Dynamic Selection Highlighting**: Selected devices glow and pulse on all maps for instant recognition.
+- **Tactical Radar**: 360-degree spatial radar with distance estimation and material labels.
+
+### 🛠️ Professional UI & Architecture
+
+- **Modular Refactor**: Decoupled `backend.py`, `viz_panels.py`, `widgets.py`, and `main.py` for maximum performance and stability.
+- **Advanced Filtering**: Isolate **Mobile Devices Only**, filter by Signal Floor (dBm), or security type (WPA2/Open).
+- **Interface Wizard**: Built-in monitor-mode selection and automated `airodump-ng` lifecycle management.
+- **Zero-Error Engineering**: Guarded callbacks and hardened shutdown logic for a clean terminal exit every time.
+
+---
+
+## 📋 Requirements
 
 - Python 3.8+
-- Linux (tested on Ubuntu/Debian)
-- [aircrack-ng](https://www.aircrack-ng.org/) tools (`airmon-ng`, `airodump-ng`)
-- Root privileges (for monitor mode and packet capture)
-
-**Python packages:**
-- customtkinter
-- pandas
-- mac_vendor_lookup
-- matplotlib
-- numpy
-- Pillow
-- watchdog
-- sounddevice
-- (see `requirements.txt`)
+- Linux (Kali, OS, Ubuntu/Debian)
+- [aircrack-ng](https://www.aircrack-ng.org/) suite installed.
+- WiFi Adapter supporting **Monitor Mode**.
+- Root privileges.
 
 ---
 
-## Installation
+## ⚙️ Installation & Usage
 
-1. **Clone the repo:**
-```sh
+1. **Clone & Setup Environment**:
+
+```bash
 git clone https://github.com/sadaqaty/wifi-cyberscan.git
 cd wifi-cyberscan
-```
-2. **Install dependencies:**
-```sh
-python3 -m venv env
-source env/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
-3. **Install aircrack-ng:**
-```sh
-sudo apt install aircrack-ng
+
+2. **Run as Root**:
+
+```bash
+sudo ./venv/bin/python3 main.py
 ```
 
----
-
-## Usage
-
-1. **Run the app as root (required for monitor mode):**
-```sh
-sudo env "PATH=$PATH" ./env/bin/python main.py
-```
-2. **The app will:**
-   - Check for `airmon-ng` and `airodump-ng`.
-   - Start monitor mode on `wlan0` and launch airodump-ng.
-   - Parse and visualize live Wi-Fi data from `probe_log-01.csv`.
-
-3. **Click any device dot on the radar to see full details.**
+3. **Operation**:
+   - Select your wireless interface when prompted.
+   - Use the **SCAN FILTERS** to isolate specific device types.
+   - Click any row in the table to generate a **Device Analysis Report** and highlight its position on the map.
 
 ---
 
-## Permissions & Security
-- **Root is required** to enable monitor mode and capture packets.
-- The app will kill conflicting network processes and restart NetworkManager on exit.
-- Use in a legal and responsible manner.
+## 🚦 Security & Disclaimer
+
+- **Root is strictly required** for raw socket access and monitor mode.
+- Use this tool ONLY on networks and environments where you have explicit authorization.
+- The author is not responsible for any misuse of this analytical tool.
 
 ---
 
-## Troubleshooting
-- **Missing airmon-ng/airodump-ng:** Install `aircrack-ng` and ensure it's in your PATH.
-- **No devices shown:** Ensure your Wi-Fi adapter supports monitor mode and is not blocked.
-- **Permission errors:** Always run as root (`sudo`).
-- **UI glitches:** Use a modern Linux distro and Python 3.8+.
+## 💎 Credits
 
----
-
-## Credits
-- UI: [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter)
-- Wi-Fi tools: [aircrack-ng](https://www.aircrack-ng.org/)
-- Icons: [Font Awesome](https://fontawesome.com/) (if used)
-- Author: [Sadaqaty](https://github.com/Sadaqaty)
+- **Engine**: [airodump-ng](https://www.aircrack-ng.org/)
+- **Graphics**: [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) & Matplotlib
+- **Logic**: Built with agentic AI precision for professional signal monitoring.
+- **Author**: [Sadaqaty](https://github.com/Sadaqaty)
